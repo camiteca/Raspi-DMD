@@ -1,6 +1,7 @@
 # Raspi-DMD
 A Raspberry Pi operating system aimed to interface Bally-Williams DMD era interfaces with newer display technologies.
 
-# Based on:
+## Based on:
 https://github.com/hawkulous/RPI-WPC-RGB-LED-MATRIX-240hz
-https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/os/index.html
+https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/os/index.htmlç
+https://pinside.com/pinball/forum/topic/arduino-pinball-controller/page/3#post-5220963
