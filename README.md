@@ -5,6 +5,7 @@ A Raspberry Pi operating system aimed to interface Bally-Williams DMD era interf
 To be able to interface the Raspberry PI with the pinball video board, we can follow the instructions detailed [here](https://pinside.com/pinball/forum/topic/smartdmd-dmd-interface-with-colors-upscaling-network-and-more).
 
 ### Useful resources
+- https://pinside.com/pinball/forum/topic/williamsbally-dmd-to-hdmi-raspberry-pi-b-project-with-source-code
 - https://github.com/hawkulous/RPI-WPC-RGB-LED-MATRIX-240hz
 - https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/os/index.html
 - https://pinside.com/pinball/forum/topic/arduino-pinball-controller/page/3#post-5220963
