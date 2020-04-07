@@ -71,8 +71,8 @@ CaptureDMD:
 
     ldr pinLevels, [pinLevelAddress]
     tst pinLevels, dotClockPinMask
-    movne r4, #0
-    bne waitNextPixel$
+    moveq r4, #0
+    beq waitNextPixel$
 
     tst r4, #1
     bne waitNextPixel$
