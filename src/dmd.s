@@ -1,14 +1,5 @@
 .section .text
 
-.equ GPEDS0,0x20200040
-.equ GPEDS1,0x20200044
-
-.equ GPHEN0, 0x20200064
-.equ GPHEN1, 0x20200068
-
-.equ GPREN0, 0x2020004c
-.equ GPREN1, 0x20200050
-
 .equ GPLEV0,0x20200034
 
 .equ ROWDATAPIN, 0x800
@@ -32,17 +23,17 @@ CaptureDMD:
 
     waitNextFrame$:
 
+    // initialize row counter
+    mov rowCounter, #1
+
+    // wait for row data pin high (frame start)
     rowDataPinMask .req r9
     ldr rowDataPinMask, =ROWDATAPIN
-
     waitRowDataPinHigh$:
-    ldr pinLevels, [pinLevelAddress]
-    tst pinLevels, rowDataPinMask
-    bne waitRowDataPinHigh$
-
+        ldr pinLevels, [pinLevelAddress]
+        tst pinLevels, rowDataPinMask
+        bne waitRowDataPinHigh$
     .unreq rowDataPinMask
-
-    mov rowCounter, #1
     
     waitNextLine$:
 
@@ -82,7 +73,7 @@ CaptureDMD:
     
     tst pinLevels, serialDataPinMask
     ldrne r0, =0xE140
-    ldreq r0, =0x0000
+    moveq r0, #0
     bl SetForeColor
 
     mov r0, pixelCounter
@@ -97,10 +88,8 @@ CaptureDMD:
     beq waitNextLine$
 
     .unreq serialDataPinMask
-
     .unreq pinLevels
     .unreq pinLevelAddress
-
     .unreq pixelCounter
     .unreq rowCounter
 
